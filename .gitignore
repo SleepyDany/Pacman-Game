@@ -6,6 +6,10 @@
 export.cfg
 export_presets.cfg
 
+# IDE
+.idea/
+.vs/
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 
