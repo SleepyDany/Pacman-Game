@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://v07msg8psmgp"]
+
+[ext_resource type="PackedScene" uid="uid://sla41g13apwj" path="res://content/models/triplejoin.gltf" id="1_64bsl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0pfr"]
+size = Vector3(4, 4, 4)
+
+[node name="TripleJoinWall" type="Area3D"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_d0pfr")
+
+[node name="TripleJoinMesh" parent="CollisionShape3D" instance=ExtResource("1_64bsl")]

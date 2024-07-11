@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgxahwl4r6ljc"]
+
+[ext_resource type="PackedScene" uid="uid://ivwgko1gf4bm" path="res://content/blocks/simple/wall.tscn" id="1_2kbcf"]
+[ext_resource type="PackedScene" uid="uid://v07msg8psmgp" path="res://content/blocks/simple/triple_join_wall.tscn" id="2_byx6y"]
+[ext_resource type="PackedScene" uid="uid://cwgf3v10oepvl" path="res://content/blocks/simple/endwall.tscn" id="3_iv76t"]
+
+[node name="TripleWall" type="Node3D"]
+
+[node name="Wall" parent="." instance=ExtResource("1_2kbcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Wall2" parent="." instance=ExtResource("1_2kbcf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, -10)
+
+[node name="Wall3" parent="." instance=ExtResource("1_2kbcf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 10)
+
+[node name="TripleJoinWall" parent="." instance=ExtResource("2_byx6y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 0)
+
+[node name="Endwall" parent="." instance=ExtResource("3_iv76t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 19)
+
+[node name="Endwall2" parent="." instance=ExtResource("3_iv76t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14, 0, 0)
+
+[node name="Endwall3" parent="." instance=ExtResource("3_iv76t")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -5, 0, -19)

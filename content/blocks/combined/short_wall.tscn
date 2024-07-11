@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvqjece0go3bc"]
+
+[ext_resource type="PackedScene" uid="uid://ivwgko1gf4bm" path="res://content/blocks/simple/wall.tscn" id="1_26f32"]
+[ext_resource type="PackedScene" uid="uid://cwgf3v10oepvl" path="res://content/blocks/simple/endwall.tscn" id="2_2p4h0"]
+
+[node name="ShortWall" type="Node3D"]
+
+[node name="Wall" parent="." instance=ExtResource("1_26f32")]
+
+[node name="Endwall" parent="." instance=ExtResource("2_2p4h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="Endwall2" parent="." instance=ExtResource("2_2p4h0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9, 0, 0)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc313gktw008r"]
+
+[ext_resource type="PackedScene" uid="uid://kkgsq5wfdjh0" path="res://content/blocks/simple/corner.tscn" id="1_04o0i"]
+[ext_resource type="PackedScene" uid="uid://ivwgko1gf4bm" path="res://content/blocks/simple/wall.tscn" id="2_8q7ea"]
+
+[node name="CornerWall" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -8)
+
+[node name="CornerWall" parent="." instance=ExtResource("1_04o0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Wall" parent="." instance=ExtResource("2_8q7ea")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 9)
+
+[node name="Wall2" parent="." instance=ExtResource("2_8q7ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -0.999999)

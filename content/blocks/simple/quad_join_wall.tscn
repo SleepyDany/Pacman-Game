@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv36vfus0hixv"]
+
+[ext_resource type="PackedScene" uid="uid://d0lnmh0yjtt73" path="res://content/models/quadjoin.gltf" id="1_65ulb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2hro"]
+size = Vector3(4, 4, 4)
+
+[node name="QuadJoinWall" type="Area3D"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_e2hro")
+
+[node name="QuadJoinMesh" parent="CollisionShape3D" instance=ExtResource("1_65ulb")]

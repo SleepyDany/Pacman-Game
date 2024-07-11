@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://kkgsq5wfdjh0"]
+
+[ext_resource type="PackedScene" uid="uid://bfqs2qph1khbo" path="res://content/models/corner.gltf" id="1_ne66x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lbtn2"]
+size = Vector3(4, 4, 4)
+
+[node name="CornerWall" type="Area3D"]
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_lbtn2")
+
+[node name="CornerMesh" parent="CollisionShape3D" instance=ExtResource("1_ne66x")]

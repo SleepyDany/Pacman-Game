@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwgf3v10oepvl"]
+
+[ext_resource type="PackedScene" uid="uid://cme6va5fw8bxh" path="res://content/models/endwall.gltf" id="1_onlqd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u08vm"]
+size = Vector3(2, 4, 4)
+
+[node name="Endwall" type="Area3D"]
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_u08vm")
+
+[node name="EndwallMesh" parent="CollisionShape3D" instance=ExtResource("1_onlqd")]

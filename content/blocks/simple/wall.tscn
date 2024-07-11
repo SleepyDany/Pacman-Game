@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ivwgko1gf4bm"]
+
+[ext_resource type="PackedScene" uid="uid://c32te2qvlskjx" path="res://content/models/wall.gltf" id="1_2132k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7duns"]
+size = Vector3(16, 4, 4)
+
+[node name="Wall" type="Area3D"]
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7duns")
+
+[node name="WallMesh" parent="CollisionShape3D" instance=ExtResource("1_2132k")]

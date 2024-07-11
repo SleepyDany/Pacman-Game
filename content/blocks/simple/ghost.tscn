@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://khf6jwe5uvt"]
+
+[ext_resource type="PackedScene" uid="uid://bxdoi47i7incc" path="res://content/models/ghost.gltf" id="1_and81"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_buv17"]
+size = Vector3(12, 3, 14)
+
+[node name="Ghost" type="Area3D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_buv17")
+
+[node name="GhostMesh" parent="CollisionShape3D" instance=ExtResource("1_and81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
