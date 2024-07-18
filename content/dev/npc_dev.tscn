@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dypsqcxx6yato"]
+
+[ext_resource type="Script" path="res://content/dev/npc_dev.gd" id="1_hlj51"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_52s5a"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ngd7"]
+
+[node name="Npc_dev" type="CharacterBody3D"]
+script = ExtResource("1_hlj51")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_52s5a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_0ngd7")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 6.5
+target_desired_distance = 6.5
+path_max_distance = 1000.01
+path_postprocessing = 1
+debug_enabled = true

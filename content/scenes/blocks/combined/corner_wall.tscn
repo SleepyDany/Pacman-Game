@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://kkgsq5wfdjh0" path="res://content/blocks/simple/corner.tscn" id="1_04o0i"]
 [ext_resource type="PackedScene" uid="uid://ivwgko1gf4bm" path="res://content/blocks/simple/wall.tscn" id="2_8q7ea"]
 
-[node name="CornerWall" type="Node3D"]
+[node name="CornerWall" type="StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -8)
 
 [node name="CornerWall" parent="." instance=ExtResource("1_04o0i")]

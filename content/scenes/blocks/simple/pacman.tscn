@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://camnxwak5ho0c"]
+[gd_scene load_steps=4 format=3 uid="uid://camnxwak5ho0c"]
 
+[ext_resource type="Script" path="res://content/scripts/pacman.gd" id="1_1rl7c"]
 [ext_resource type="PackedScene" uid="uid://ubq5lujexro" path="res://content/models/pacman.gltf" id="1_qbtkf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_142yq"]
-size = Vector3(13, 3, 12)
+size = Vector3(12.95, 3, 11.95)
 
 [node name="Pacman" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 7
+script = ExtResource("1_1rl7c")
+step_time = 0.45
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_142yq")
@@ -16,5 +19,5 @@ shape = SubResource("BoxShape3D_142yq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 32, 0)
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 80, 0)
 fov = 90.0

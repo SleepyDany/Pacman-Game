@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dovvaiikhn0dj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fwoi"]
+albedo_color = Color(0.0156863, 0, 0.129412, 1)
+
+[node name="Floor" type="CSGBox3D"]
+material_override = SubResource("StandardMaterial3D_4fwoi")
+use_collision = true
+collision_mask = 6
+size = Vector3(13, 1, 13)
