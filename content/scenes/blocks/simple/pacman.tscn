@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://camnxwak5ho0c"]
+[gd_scene load_steps=5 format=3 uid="uid://camnxwak5ho0c"]
 
 [ext_resource type="Script" path="res://content/scripts/pacman.gd" id="1_1rl7c"]
 [ext_resource type="PackedScene" uid="uid://ubq5lujexro" path="res://content/models/pacman.gltf" id="1_qbtkf"]
+[ext_resource type="Texture2D" uid="uid://x4hmg31hogtd" path="res://content/png/heart.png" id="3_83urr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_142yq"]
 size = Vector3(12.95, 3, 11.95)
@@ -20,4 +21,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 80, 0)
+top_level = true
 fov = 90.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="HBoxContainer" parent="HUD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(20, 0)
+
+[node name="Heart" type="Container" parent="HUD/HealthBar"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="HeartSprite" type="Sprite2D" parent="HUD/HealthBar/Heart"]
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("3_83urr")
+
+[node name="Heart2" type="Container" parent="HUD/HealthBar"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 9
+size_flags_vertical = 4
+
+[node name="HeartSprite" type="Sprite2D" parent="HUD/HealthBar/Heart2"]
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("3_83urr")
+
+[node name="Heart3" type="Container" parent="HUD/HealthBar"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 9
+size_flags_vertical = 4
+
+[node name="HeartSprite" type="Sprite2D" parent="HUD/HealthBar/Heart3"]
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("3_83urr")

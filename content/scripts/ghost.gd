@@ -6,24 +6,37 @@ static var up_dir = Vector3(0, 0, -1)
 @onready var nav_agent = $NavigationAgent3D
 @onready var collision_shape = $CollisionShape3D
 
-# movement
-var speed = 13
+var step = 13
 var target = Vector3.ZERO
-
-@export var step_time = 0.35
 var prev_time = 0
+@export var step_time = 0.35
+@onready var b_is_alive = false
 
 
-func on_ready():
-	collision_shape.connect("area_shape_entered", on_hit)
+func _physics_process(delta):
+	if not b_is_alive:
+		return
+	
+	var direction = get_direction(delta)
+
+	velocity = direction * step
+	var collision = move_and_collide(velocity)
+	handle_collision(collision)
 
 
-func on_hit():
-	print("Collision detected!")
+func start(spawn_position = null):
+	b_is_alive = true
+	
+	if spawn_position != null:
+		global_position = spawn_position
+
+
+func stop():
+	b_is_alive = false
 
 
 func get_direction(delta):
-	var new_direction = Vector3()
+	var new_direction = Vector3.ZERO
 
 	prev_time += delta
 	if (prev_time < step_time):
@@ -55,8 +68,12 @@ func update_target(_target):
 	nav_agent.set_target_position(target)
 
 
-func _physics_process(delta):
-	var direction = get_direction(delta)
+func handle_collision(collision):
+	if collision == null or collision.get_collider() == null:
+		return
 
-	velocity = direction * speed / delta
-	move_and_slide()
+	var collider = collision.get_collider()
+	if collider == null or not collider.is_in_group("Player"):
+		return
+
+	collider.handle_damage(self)
