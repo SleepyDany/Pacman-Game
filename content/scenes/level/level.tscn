@@ -26,7 +26,8 @@ shadow_enabled = true
 [node name="Pacman" parent="." groups=["Player"] instance=ExtResource("4_dyxxm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, -0.5, 13)
 platform_on_leave = 2
-step_time = 0.2
+step_time = 0.18
+camera_lerp_weight = 0.125
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 visible = false
@@ -1600,7 +1601,7 @@ transform = Transform3D(-0.57, 0, -3.17865e-08, 0, 1, 0, 1.81183e-08, 0, -1, -93
 
 [node name="Ghost" parent="Ghosts" instance=ExtResource("3_dw3fb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, -0.5, -20)
-step_time = 0.25
+step_time = 0.22
 
 [node name="UI" type="Node" parent="."]
 
