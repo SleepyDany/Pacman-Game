@@ -15,6 +15,7 @@ var step = 13
 var prev_time = 0
 @export var step_time = 0.4
 
+@export var camera_lerp_weight = 0.1
 var direction = Vector3.ZERO
 var input_direction = Vector3.ZERO
 var b_left_turn = true
@@ -107,7 +108,7 @@ func handle_collision(collision):
 
 
 func handle_camera():
-	camera.global_position.x = lerp(camera.global_position.x, global_position.x, 0.1)
+	camera.global_position.x = lerp(camera.global_position.x, global_position.x, camera_lerp_weight)
 	camera.global_position.z = lerp(camera.global_position.z, global_position.z, 0.1)
 
 
