@@ -1,34 +1,135 @@
-[gd_scene load_steps=2 format=3 uid="uid://i2sao3ssom03"]
+[gd_scene load_steps=12 format=3 uid="uid://i2sao3ssom03"]
 
 [ext_resource type="Script" path="res://content/scripts/menu_hud.gd" id="1_f6j37"]
+
+[sub_resource type="Theme" id="Theme_a5yjy"]
+
+[sub_resource type="Theme" id="Theme_n7gnt"]
+default_font_size = 40
+
+[sub_resource type="Theme" id="Theme_ulv1k"]
+default_font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hem4t"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_colr4"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 0.941176)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h2i8"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_nv3ek"]
+default_font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkhbu"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+border_blend = true
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1i0k"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 0.941176)
+border_blend = true
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 8.0
+expand_margin_top = 5.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vuwhn"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+border_blend = true
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 7.0
+expand_margin_top = 5.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
 
 [node name="MenuHUD" type="CanvasLayer"]
 script = ExtResource("1_f6j37")
 
 [node name="Menu" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(130, 70)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = -35.0
-offset_right = 65.0
-offset_bottom = 35.0
+offset_left = -82.5
+offset_top = -68.0
+offset_right = 82.5
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = SubResource("Theme_a5yjy")
+alignment = 1
 
-[node name="StartButton" type="Button" parent="Menu"]
+[node name="GameOverLabel" type="Label" parent="Menu"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_n7gnt")
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Menu"]
+light_mask = 0
+visibility_layer = 0
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
-text = "Начать игру"
+
+[node name="StartButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(165, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_ulv1k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hem4t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_colr4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1h2i8")
+text = "Start"
+
+[node name="HSeparator" type="HSeparator" parent="Menu"]
+custom_minimum_size = Vector2(150, 10)
+layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="ExitButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(165, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
-button_mask = 7
-text = "Выход
+theme = SubResource("Theme_nv3ek")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rkhbu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l1i0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vuwhn")
+text = "Exit
 "

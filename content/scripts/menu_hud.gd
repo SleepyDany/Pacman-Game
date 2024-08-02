@@ -6,6 +6,7 @@ signal on_exit()
 @onready var menu = $Menu
 @onready var start_btn = $Menu/StartButton
 @onready var exit_btn = $Menu/ExitButton
+@onready var game_over_label = $Menu/GameOverLabel
 
 
 func _ready():
@@ -15,11 +16,11 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		menu.visible = !menu.visible
+		self.visible = !self.visible
 
 
 func start():
-	menu.hide()
+	self.hide()
 	on_start.emit()
 
 

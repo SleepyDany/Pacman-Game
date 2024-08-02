@@ -15,6 +15,10 @@ run/main_scene="res://content/scenes/level/level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[gui]
+
+theme/custom_font="res://content/fonts/lotsofdotz/LOTSOFDOTZ.TTF"
+
 [input]
 
 move_left={

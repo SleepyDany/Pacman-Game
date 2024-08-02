@@ -1,0 +1,38 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dil11l0d3b5oo"
+path="res://.godot/imported/LOTSOFDOTZ.TTF-76a7a6d56d3c90f30e651557f5ca7435.fontdata"
+
+[deps]
+
+source_file="res://content/fonts/lotsofdotz/LOTSOFDOTZ.TTF"
+dest_files=["res://.godot/imported/LOTSOFDOTZ.TTF-76a7a6d56d3c90f30e651557f5ca7435.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "Новая конфигурация",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

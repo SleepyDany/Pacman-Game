@@ -18,7 +18,8 @@ func _physics_process(_delta):
 
 
 func start_game():
-	# pacman.start(center.position, true)
+	if pacman.health == 0:
+		hud.game_over_label.hide()
 	pacman.start(null, true)
 	get_tree().call_group("Ghosts", "start")
 
@@ -27,6 +28,7 @@ func stop_game():
 	pacman.stop()
 	get_tree().call_group("Ghosts", "stop")
 	hud.show()
+	hud.game_over_label.show()
 
 
 func handle_pacman_damage(player_health):
